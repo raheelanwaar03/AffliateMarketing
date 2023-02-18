@@ -11,4 +11,9 @@ class WelcomeController extends Controller
     {
         return view('welcome.index');
     }
+
+    public function contactUs()
+    {
+        return view('welcome.contact');
+    }
 }

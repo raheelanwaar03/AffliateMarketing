@@ -95,7 +95,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-sm-6">
-                            <a class="navbar-brand" href="index.html">YourCoupon <small>Discount Coupon
+                            <a class="navbar-brand" href="{{ route('LandingPage') }}">YourCoupon <small>Discount Coupon
                                     Codes</small></a>
                         </div><!-- end col -->
                         {{-- <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
@@ -150,7 +150,7 @@
                                 <ul class="nav navbar-nav">
                                     <li><a class="active" href="{{ route('LandingPage') }}" title="Contact Us">Home</a>
                                     </li>
-                                    {{-- <li><a href="{{ route('LandingPage.ContactUs') }}" title="Contact Us">Contact Us</a> --}}
+                                    <li><a href="{{ route('LandingPage.ContactUs') }}" title="Contact Us">Contact Us</a>
                                     </li>
                                     <li class="dropdown hasmenu">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories
