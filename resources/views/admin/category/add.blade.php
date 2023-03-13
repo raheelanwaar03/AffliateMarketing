@@ -35,10 +35,10 @@
         <div class="page-title mb-lg-4">
             <div class="container-fluid">
                 <ol class="breadcrumb bg-transparent w-100 li_animate mb-3 mb-md-1">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">My Dashboard</li>
+                    <li class="breadcrumb-item"><a href="{{ route('Admin.Dashboard') }}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Catagory</li>
                 </ol>
-                <h1 class="mb-0 text-gradient font-heading">Hello Zeshan, Welcome to admin Dashboard!</h1>
+                <h1 class="mb-0 text-gradient font-heading">Hello, Admin!</h1>
                 <div class="ms-sm-auto mt-2 mt-sm-0">
                 </div>
             </div>
@@ -47,52 +47,48 @@
         <main class="page-body">
             <div class="container-fluid">
                 <!--[ Start:: My Dashboard ]-->
-                <div class="row g-3 row-deck">
-                    <div class="col-xxl-3 col-xl-6 col-lg-3 col-md-6 col-sm-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3>$15K</h3>
-                                <p class="text-muted">67% <i class="fa fa-level-up text-success"></i> Total income</p>
-                                <div id="apexspark_bar_1"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3 col-xl-6 col-lg-3 col-md-6 col-sm-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3>$1258</h3>
-                                <p class="text-muted">15% <i class="fa fa-level-up text-success"></i> Total Expense
-                                </p>
-                                <div id="apexspark_bar_2"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3 col-xl-6 col-lg-3 col-md-6 col-sm-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3>$2315</h3>
-                                <p class="text-muted">23% <i class="fa fa-level-up text-success"></i> Total Growth</p>
-                                <div id="apexspark_bar_3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3 col-xl-6 col-lg-3 col-md-6 col-sm-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3>$1025</h3>
-                                <p class="text-muted">52% <i class="fa fa-level-up text-success"></i> Bounce Rate</p>
-                                <div id="apexspark_bar_4"></div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h3 class="text-center my-3 text-gradient">Add New Category</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form action="{{ route('Admin.Store.Category') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Category Name</label>
+                                            <input type="text" name="category_name" class="form-control" placeholder="Enter Category Name">
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Category Slug</label>
+                                            <input type="text" name="category_slug" class="form-control" placeholder="Enter Category Slug">
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Category Description</label>
+                                            <textarea name="category_des" class="form-control" rows="5"></textarea>
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="" class="mb-1 ml-2">Category Image</label>
+                                            <input type="file" name="category_img" class="form-control">
+                                        </div>
+                                        <button class="btn btn-primary">Add Category</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </main>
         <!--[ Start:: page footer link copywrite ]-->
         <footer class="page-footer py-4 mt-4 static">
             <div class="container-fluid">
-                <p class="col-md-4 mb-0 text-muted">© 2022 <a target="_blank"
-                        title="Pixelwibes">{{ env('APP_NAME') }}</a>, All Rights Reserved.</p>
+                <p class="col-md-4 mb-0 text-muted">© 2022 <a  target="_blank" class="underline"
+                        title="{{ env('APP_NAME') }}">{{ env('APP_NAME') }}</a>, All Rights Reserved.</p>
             </div>
         </footer>
     </div>
@@ -102,4 +98,15 @@
             fill: ["var(--primary-color)", "var(--border-color)"]
         })
     </script>
+@endsection
+
+
+@section('editor')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#textEditor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection

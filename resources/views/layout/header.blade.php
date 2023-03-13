@@ -69,7 +69,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 center-xs">
                         <p class="topbar-text">
-                            <strong><i class="fa fa-phone"></i></strong> +90 987 123 45 67 &nbsp;&nbsp;
+                            <strong><i class="fa fa-phone"></i></strong>{{ env('APP_NUM') }} &nbsp;&nbsp;
                             <strong><i class="fa fa-envelope-o"></i></strong> <a
                                 href="mailto:info@yoursite.com">info@yoursite.com</a>
                         </p>
@@ -98,22 +98,6 @@
                             <a class="navbar-brand" href="{{ route('LandingPage') }}">YourCoupon <small>Discount Coupon
                                     Codes</small></a>
                         </div><!-- end col -->
-                        {{-- <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
-                            <div id="dl-menu" class="dl-menuwrapper">
-                                <button class="dl-trigger"><i class="fa fa-tags"></i></button>
-                                <p>Browse Deal</p>
-                                <ul class="dl-menu">
-                                    <li><a href="#">Coupon Codes</a></li>
-                                    <li><a href="#">Printable Coupons</a></li>
-                                    <li><a href="#">Product Deals</a></li>
-                                    <li><a href="#">Gift Card Deals</a></li>
-                                    <li><a href="#">Free Shipping</a></li>
-                                    <li><a href="#">Top 30 Coupons</a></li>
-                                    <li><a href="#">Black Friday</a></li>
-                                    <li><a href="#">Back to School</a></li>
-                                </ul>
-                            </div>
-                        </div><!-- end col --> --}}
 
                         <div class="col-md-2 col-sm-3 demo-1 hidden-xs">
                             <div id="dl-menu2" class="dl-menuwrapper">
@@ -182,32 +166,6 @@
                                     </li>
                                     {{-- @if (auth()->user())
                                         <li><a href="{{ route('User.Dashboard') }}" title="">Dashboard</a></li> --}}
-                                </ul>
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="dropdown hasmenu userpanel">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
-                                                src="{{ asset('assets/uploads/men.jpg') }}" alt="avatar"
-                                                class="img-circle"> <span class="fa fa-angle-down"></span></a>
-                                        <ul class="dropdown-menu start-right" role="menu">
-                                            {{-- <li><a href="{{ route('User.Dashboard') }}"><i
-                                                        class="fa fa-dashboard"></i>
-                                                    Dashboard</a></li> --}}
-                                            <li><a href="user-favorites.html"><i class="fa fa-star"></i> Favorite
-                                                    Stores</a></li>
-                                            <li><a href="user-saved.html"><i class="fa fa-heart-o"></i> Saved
-                                                    Coupons</a></li>
-                                            <li><a href="user-submit.html"><i class="fa fa-bullhorn"></i> Submit
-                                                    Coupon</a></li>
-                                            <li>
-                                            <li>
-                                                {{-- <form action="{{ route('logout') }}" method="POST">
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-block btn-info"><i
-                                                            class="fa fa-lock"></i>Sign Out</button>
-                                                </form> --}}
-                                            </li>
-
-                                    </li>
                                 </ul>
                             {{-- @else
                                 <li><a href="{{ route('login') }}" title="">Login</a></li>
