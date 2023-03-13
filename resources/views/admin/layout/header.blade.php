@@ -76,7 +76,7 @@
                         <!-- Menu: Sub menu ul -->
                         <ul class="sub-menu collapse" id="menu_apps">
                             <li><a class="ms-link" href="{{ route('Admin.Add.Category') }}">Add Category</a></li>
-                            {{-- <li><a class="ms-link" href="{{ route('Admin.All.Categories') }}">All Categories</a></li> --}}
+                            <li><a class="ms-link" href="{{ route('Admin.All.Categories') }}">All Categories</a></li>
                         </ul>
                     </li>
                     <li class="collapsed">
@@ -120,3 +120,5 @@
             </div>
         </div>
     </aside>
+
+    <x-alert/>
